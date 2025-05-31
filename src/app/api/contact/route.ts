@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     try {
       const file = await fs.readFile(MESSAGES_FILE, 'utf-8');
       messages = JSON.parse(file);
-    } catch (e) {
+    } catch {
       // File does not exist or is invalid, start fresh
       messages = [];
     }
@@ -21,7 +21,10 @@ export async function POST(req: NextRequest) {
     });
     await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
     return NextResponse.json({ success: true });
-  } catch (error) {
-    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Failed to save message' },
+      { status: 500 }
+    );
   }
 } 

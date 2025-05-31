@@ -49,7 +49,7 @@ export default function Contact() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Feel free to reach out to me for any questions or opportunities. I'm always open to
+            Feel free to reach out to me for any questions or opportunities. I&apos;m always open to
             discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
 
