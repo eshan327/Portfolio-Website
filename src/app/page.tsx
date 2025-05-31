@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Home() {
   const languages = [
     "Python", "Java", "C", "JavaScript", "TypeScript", 
@@ -17,7 +15,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center py-20">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Eshan</span>
+          Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Eshan</span>
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
           I&apos;m a software engineer passionate about building innovative solutions and creating impactful user experiences.

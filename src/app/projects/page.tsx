@@ -85,7 +85,7 @@ export default function Projects() {
       <div className="mt-16 text-center">
         <h2 className="text-2xl font-semibold mb-4">Academic Projects</h2>
         <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-          Beyond these public projects, I've worked on numerous academic projects that have significantly contributed to my growth as a developer. These include a C compiler built in OCaml, a Rust-powered garbage collector, a command line shell in C, and many more. While these projects aren't publicly shareable, they've provided invaluable experience in systems programming, compiler design, DSA, and object-oriented and functional paradigms.
+          Beyond these public projects, I&apos;ve worked on numerous academic projects that have significantly contributed to my growth as a developer. These include a C compiler built in OCaml, a Rust-powered garbage collector, a command line shell in C, and many more. While these projects aren&apos;t publicly shareable, they&apos;ve provided invaluable experience in systems programming, compiler design, DSA, and object-oriented and functional paradigms.
         </p>
       </div>
     </div>
