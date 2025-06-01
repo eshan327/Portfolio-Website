@@ -1,14 +1,14 @@
 'use client';
 
 import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
+import Particles from '@tsparticles/react';
+import { Engine } from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
     try {
-      await loadFull(engine);
+      await loadSlim(engine);
     } catch (error) {
       console.error('Error initializing particles:', error);
     }
@@ -35,24 +35,26 @@ export default function ParticlesBackground() {
               enable: true,
               mode: 'repulse',
             },
-            resize: true,
+            resize: {
+              enable: true,
+            },
           },
           modes: {
             push: {
               quantity: 4,
             },
             repulse: {
-              distance: 100,
+              distance: 200,
               duration: 0.4,
             },
           },
         },
         particles: {
           color: {
-            value: '#3b82f6',
+            value: '#ffffff',
           },
           links: {
-            color: '#3b82f6',
+            color: '#ffffff',
             distance: 150,
             enable: true,
             opacity: 0.2,
@@ -76,7 +78,7 @@ export default function ParticlesBackground() {
             value: 80,
           },
           opacity: {
-            value: 0.3,
+            value: 0.2,
           },
           shape: {
             type: 'circle',
@@ -87,7 +89,7 @@ export default function ParticlesBackground() {
         },
         detectRetina: true,
       }}
-      className="absolute inset-0 -z-10"
+      className="fixed inset-0 -z-10"
     />
   );
 } 
