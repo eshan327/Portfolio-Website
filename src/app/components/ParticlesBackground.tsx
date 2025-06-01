@@ -19,6 +19,7 @@ export default function ParticlesBackground() {
       id="tsparticles"
       init={particlesInit}
       options={{
+        fullScreen: false,
         background: {
           color: {
             value: 'transparent',
@@ -35,9 +36,7 @@ export default function ParticlesBackground() {
               enable: true,
               mode: 'repulse',
             },
-            resize: {
-              enable: true,
-            },
+            resize: true,
           },
           modes: {
             push: {
@@ -71,10 +70,6 @@ export default function ParticlesBackground() {
             straight: false,
           },
           number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
             value: 80,
           },
           opacity: {
