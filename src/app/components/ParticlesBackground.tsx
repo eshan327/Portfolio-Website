@@ -1,14 +1,13 @@
 'use client';
 
 import { useCallback } from 'react';
-import Particles from '@tsparticles/react';
-import { Engine } from '@tsparticles/engine';
-import { loadSlim } from '@tsparticles/slim';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine: any) => {
     try {
-      await loadSlim(engine);
+      await loadFull(engine);
     } catch (error) {
       console.error('Error initializing particles:', error);
     }
@@ -19,70 +18,36 @@ export default function ParticlesBackground() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: false,
         background: {
           color: {
             value: 'transparent',
           },
         },
-        fpsLimit: 120,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
-            onHover: {
-              enable: true,
-              mode: 'repulse',
-            },
-            resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
         particles: {
+          number: {
+            value: 80,
+          },
           color: {
             value: '#ffffff',
           },
           links: {
+            enable: true,
             color: '#ffffff',
             distance: 150,
-            enable: true,
             opacity: 0.2,
             width: 1,
           },
           move: {
-            direction: 'none',
             enable: true,
-            outModes: {
-              default: 'bounce',
-            },
-            random: false,
             speed: 1,
-            straight: false,
-          },
-          number: {
-            value: 80,
           },
           opacity: {
             value: 0.2,
-          },
-          shape: {
-            type: 'circle',
           },
           size: {
             value: { min: 1, max: 3 },
           },
         },
-        detectRetina: true,
       }}
       className="fixed inset-0 -z-10"
     />
