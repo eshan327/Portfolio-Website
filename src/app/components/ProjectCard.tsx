@@ -19,56 +19,54 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
-      className="relative h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+      className="card p-6 h-full"
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 gradient-text">
-          {title}
-        </h3>
-        
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
-          {description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        
-        <motion.a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-          whileHover={{ x: 5 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {isWebsite ? 'View Website' : 'View Code'}
-          <svg
-            className="w-4 h-4 ml-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      <h3 className="text-xl font-semibold mb-2 gradient-text">
+        {title}
+      </h3>
+      
+      <p className="text-gray-300 mb-4">
+        {description}
+      </p>
+      
+      <div className="flex flex-wrap gap-2 mb-4">
+        {technologies.map((tech) => (
+          <span
+            key={tech}
+            className="tag"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
-        </motion.a>
+            {tech}
+          </span>
+        ))}
       </div>
+      
+      <motion.a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+        whileHover={{ x: 5 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {isWebsite ? 'View Website' : 'View Code'}
+        <svg
+          className="w-4 h-4 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+      </motion.a>
     </motion.div>
   );
 } 
