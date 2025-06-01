@@ -5,6 +5,11 @@ import CustomCursor from './components/CustomCursor';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const metadata: Metadata = {
+  title: 'Eshan | Portfolio',
+  description: 'Personal portfolio website showcasing my projects and skills',
+};
+
 export default function RootLayout({
   children,
 }: {
