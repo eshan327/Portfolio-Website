@@ -1,6 +1,0 @@
-/node_modules
-/.next/
-.vercel/
-.DS_Store
-next-env.d.ts
-messages.json
