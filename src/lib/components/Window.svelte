@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { X, Minus, Square } from 'lucide-svelte';
-	import { draggable } from 'svelte-drag';
+	import { draggable } from 'svelte-drag'; /* used via use: directive */
 	import { windows, activeWindowId } from '$lib/stores';
 	import type { Window } from '$lib/stores';
 
@@ -10,6 +10,9 @@
 	let windowElement = $state<HTMLElement>();
 	let isResizing = $state(false);
 	let windowSize = $state({ width: 900, height: 600 });
+
+	// Explicitly reference to satisfy Vite's tree-shaking analysis
+	const _draggable = draggable;
 
 	type ResizeDirection = 'n' | 's' | 'e' | 'w' | 'ne' | 'nw' | 'se' | 'sw';
 
@@ -105,6 +108,7 @@
 	}
 </script>
 
+<!-- @ts-ignore - draggable action is used but Vite may not detect it -->
 <div
 	bind:this={windowElement}
 	use:draggable={{ handle: titleBarElement, disabled: windowData.isMaximized }}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { draggable } from 'svelte-drag';
+	import { draggable } from 'svelte-drag'; /* used via use: directive */
 
 	let { label, imageSrc, ondblclick, onclick, preview, size = 'normal' }: { label: string; imageSrc: string; ondblclick?: () => void; onclick?: () => void; preview?: string; size?: 'normal' | 'large' } = $props();
 
@@ -36,9 +36,13 @@
 	const iconSize = size === 'large' ? 'h-16 w-16' : 'h-10 w-10';
 	const containerWidth = size === 'large' ? 'w-28' : 'w-20';
 	const textSize = size === 'large' ? 'text-sm' : 'text-xs';
+	
+	// Explicitly reference to satisfy Vite's tree-shaking analysis
+	const _draggable = draggable;
 </script>
 
 <div class="relative">
+	<!-- @ts-ignore - draggable action is used but Vite may not detect it -->
 	<div
 		use:draggable
 		class="flex flex-col items-center gap-2 p-3 hover:bg-teal-500 hover:bg-opacity-30 {containerWidth} cursor-move select-none transition-all hover:scale-105"
