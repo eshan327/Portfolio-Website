@@ -65,8 +65,8 @@
 			<h2 class="text-2xl font-bold mb-4 text-gray-900 border-b-2 border-teal-500 pb-2">Experience</h2>
 			<div class="space-y-4">
 				<div class="border-l-4 border-teal-500 pl-4">
-					<h3 class="text-lg font-bold text-gray-900">Software Engineering Intern</h3>
-					<p class="text-sm text-gray-600 mb-2">Apex Fund Services • Summer 2024</p>
+					<h3 class="text-lg font-bold text-gray-900">Quantitative Developer</h3>
+					<p class="text-sm text-gray-600 mb-2">Apex Fund • Since September 2024 </p>
 					<p class="text-sm text-gray-700">
 						Developed financial software applications, collaborated with teams on backend systems and API integrations.
 					</p>

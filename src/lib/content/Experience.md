@@ -1,8 +1,8 @@
 # Experience
 
-## Apex Fund Services
+## Apex Fund
 **Software Engineering Intern**  
-*Summer 2024*
+*Since September 2024*
 
 - Developed and maintained financial software applications
 - Collaborated with cross-functional teams on backend systems
