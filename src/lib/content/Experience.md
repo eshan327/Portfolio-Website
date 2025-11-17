@@ -1,7 +1,7 @@
 # Experience
 
-## Apex Fund
-**Software Engineering Intern**  
+## Apex Fund @ UMD
+**Quantitative Developer**  
 *Since September 2024*
 
 - Developed and maintained financial software applications
