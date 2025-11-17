@@ -5,7 +5,7 @@ export interface Window {
 	id: string; // A unique ID (e.g., crypto.randomUUID())
 	title: string; // The title for the window bar
 	zIndex: number; // For managing stacking
-	component: ComponentType; // The Svelte component to render in the window
+	component: any; // The Svelte component to render in the window (using any for mdsvex compatibility)
 	props?: Record<string, any>; // Props to pass to the component
 	isMinimized?: boolean;
 	isMaximized?: boolean;

@@ -168,7 +168,8 @@
 	>
 		<div class="prose prose-sm font-body max-w-none">
 			{#if windowData.component}
-				{@render windowData.component(windowData.props)}
+				{@const Component = windowData.component}
+				<Component {...windowData.props} />
 			{/if}
 		</div>
 	</div>
