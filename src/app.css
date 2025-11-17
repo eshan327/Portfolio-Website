@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-pixel: 'Press Start 2P', monospace;
+	--font-body: 'Tahoma', 'Verdana', sans-serif;
+}
